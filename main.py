@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 hostnames = ["finsense.co.ke","finsense.africa"]
 port = '443'
-print("Works In Heroku!")
+print("Works in Heroku")
 context = ssl.create_default_context()
 for hostname in hostnames:
     with socket.create_connection((hostname, port)) as sock:
@@ -41,7 +41,6 @@ for hostname in hostnames:
                             recipients,
                             msg.as_string())
 
-    send_notification(daysToExpiration, hostname)
     if daysToExpiration == 7 or daysToExpiration == 1:
-        # send_notification(daysToExpiration)
+        send_notification(daysToExpiration, hostname)
         pass
