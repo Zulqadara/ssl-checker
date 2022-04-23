@@ -6,6 +6,7 @@ from dotenv import load_dotenv
 load_dotenv()
 hostnames = ["finsense.co.ke","finsense.africa"]
 port = '443'
+print('Process start')
 
 context = ssl.create_default_context()
 for hostname in hostnames:
@@ -44,3 +45,4 @@ for hostname in hostnames:
     if daysToExpiration == 7 or daysToExpiration == 1:
         send_notification(daysToExpiration, hostname)
         pass
+print('Process End')
