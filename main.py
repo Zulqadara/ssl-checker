@@ -23,7 +23,7 @@ for hostname in hostnames:
         smtp_port = 587
         smtp_server = os.getenv('SMTP_ENDPOINT')
         sender_email = os.getenv('SMTP_ACCOUNT')
-        recipients = ['zali@finsense.co.ke', 'isumra@finsense.co.ke']
+        recipients = ['email1@test.com', 'email2@test.com']
         password = os.getenv('SMTP_PASSWORD')
         if days_to_expire == 1:
             days = "1 day"
