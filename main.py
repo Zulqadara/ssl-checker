@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 import os
 from dotenv import load_dotenv
 load_dotenv()
-hostnames = ["finsense.co.ke","finsense.africa"]
+hostnames = ["google.com","facebook.com"]
 port = '443'
 print('Process start')
 
