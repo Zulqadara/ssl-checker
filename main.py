@@ -4,7 +4,7 @@ from email.mime.text import MIMEText
 import os
 from dotenv import load_dotenv
 load_dotenv()
-hostnames = ["finsense.co.ke","finsense.africa"]
+hostnames = [] #Website names
 port = '443'
 
 context = ssl.create_default_context()
@@ -17,12 +17,14 @@ for hostname in hostnames:
 
     daysToExpiration = (certExpires - datetime.datetime.now()).days
 
+    print(hostname, daysToExpiration)
+
     def send_notification(days_to_expire, hostname):
 
         smtp_port = 587
         smtp_server = os.getenv('SMTP_ENDPOINT')
         sender_email = os.getenv('SMTP_ACCOUNT')
-        recipients = ['zali@finsense.co.ke', 'isumra@finsense.co.ke']
+        recipients = []
         password = os.getenv('SMTP_PASSWORD')
         if days_to_expire == 1:
             days = "1 day"
